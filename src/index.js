@@ -6,10 +6,8 @@ const users = new Array(50).fill("").map((_) => {
 });
 
 let curr = window.location.hash.slice(1) * 1;
-console.log(curr);
 
 const render = (users) => {
-  console.log(users);
   const html = `${users
     .map((user, index) => {
       return `<li><a href="#${index}">User: ${user.name}</a>
