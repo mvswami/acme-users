@@ -1,4 +1,6 @@
 const faker = require("faker");
+const express = require("express");
+const app = express();
 const userList = document.getElementById("user-list");
 
 const users = new Array(50).fill("").map((_) => {
@@ -28,6 +30,10 @@ const render = (users) => {
 window.addEventListener("hashchange", () => {
   curr = window.location.hash.slice(1) * 1;
   render(users);
+});
+
+app.get("/", (req, res) => {
+  res.redirect("/#");
 });
 
 module.exports = {
